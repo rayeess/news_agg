@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('as' => 'index', 'uses' => 'FeedController@getIndex'));
+
+//We defined a RESTful controller and all its via route directly
+Route::controller('feeds', 'FeedController');
